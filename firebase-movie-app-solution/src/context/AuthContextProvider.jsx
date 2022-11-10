@@ -4,7 +4,7 @@ import { userObserver } from "../auth/firebase";
 export const AuthContext = createContext();
 //* with custom hook
 // export const useAuthContext = () => {
-// return useContext(AuthContext);
+//   return useContext(AuthContext);
 // };
 
 const AuthContextProvider = ({ children }) => {
@@ -14,9 +14,10 @@ const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     userObserver(setCurrentUser);
   }, []);
-
   return (
-    <AuthContext.Provider value={currentUser}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ currentUser }}>
+      {children}
+    </AuthContext.Provider>
   );
 };
 
