@@ -1,7 +1,7 @@
 import React from "react";
 
 const Switch = () => {
-  return <div>Switch</div>;
+  return <div>Barbaros</div>;
 };
 
 export default Switch;
